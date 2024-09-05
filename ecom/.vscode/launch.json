@@ -1,0 +1,45 @@
+// {
+//     // Use IntelliSense to learn about possible attributes.
+//     // Hover to view descriptions of existing attributes.
+//     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Python Debugger: Django",
+//             "type": "debugpy",
+//             "request": "launch",
+//             "args": [
+//                 "runserver"
+//             ],
+//             "django": true,
+//             "autoStartBrowser": false,
+//             "program": "${workspaceFolder}/manage.py"
+//         }
+//     ]
+// }
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "pythonPath": "/home/ydimitrov/Projects/Django/ecom/virt/bin/python", // path to your virtual environment's python
+            "program": "/home/ydimitrov/Projects/Django/ecom/ecom/manage.py",
+            "args": [
+                "runserver",
+                "8000", // or any other port you wish to use
+            ],
+            "env": {
+                "PYTHONUNBUFFERED": "1",
+                "TEST_ENV": "This is test ENV."
+            },
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
