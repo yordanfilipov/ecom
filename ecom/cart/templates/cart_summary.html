@@ -41,14 +41,13 @@
                   <div class="row justify-content-center">
                     <div class="col-md-2">Quantity:</div>
                     <div class="col-md-2">
-                      <select class="form-select form-select-sm" id="select{{product.id}}">
+                      <select class="form-select form-select-sm" id="select{{ product.id }}">
                         <option selected>
-                        {% for key, value in quantities.items %}
-                          {% if key == product.id|slugify %}
-                            {{ value }}
-                          {% endif %}
-
-                        {% endfor %}
+                          {% for key, value in quantities.items %}
+                            {% if key == product.id|slugify %}
+                              {{ value }}
+                            {% endif %}
+                          {% endfor %}
                         </option>
 
                         <option value="1">1</option>
@@ -59,7 +58,7 @@
                       </select>
                     </div>
                   </div>
-                  <br/><br/>
+                  <br /><br />
                   <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
                   <button type="button" data-index="{{ product.id }}" class="btn btn-secondary update-cart">Update</button>
                   <button type="button" data-index="{{ product.id }}" class="btn btn-danger delete-product">Remove</button>
@@ -69,19 +68,21 @@
           </div>
         </div>
       {% endfor %}
-      <h3>Total: ${{ totals }}</h3>
+      <div align="right">
+        <h3>Total: ${{ totals }}</h3>
+        <a href="{% url 'checkout' %}" class="btn btn-success">Checkout</a>
+      </div>
       <br /><br /><br />
-      {% else %}
+    {% else %}
       There's nothing in your Cart...
 
-  <br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br />
     {% endif %}
   </div>
 
   <br /><br /><br /><br /><br /><br /><br /><br />
 
-
-<script>
+  <script>
   // update cart
   $(document).on('click', '.update-cart', function(e){
     e.preventDefault();
@@ -140,5 +141,4 @@
 })
 
 </script>
-
 {% endblock %}
