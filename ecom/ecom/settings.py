@@ -18,7 +18,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ecom-production-1b5c.up.railway.app', 'https://ecom-production-1b5c.up.railway.app',]
+ALLOWED_HOSTS = ['ecom-production-1b5c.up.railway.app', 'https://ecom-production-1b5c.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://ecom-production-1b5c.up.railway.app']
 
 
