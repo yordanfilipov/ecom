@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'ecom.wsgi.application'
 
 # DATABASES['default'] = dj_database_url.config()
 DATABASES = {
-    "default": dj_database_url.config(env="DATABASE_URL", conn_max_age=600)
+    "default": dj_database_url.config(env="POSTGRES_URL", conn_max_age=600)
 }
 
 # Password validation
