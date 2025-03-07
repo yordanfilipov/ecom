@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,7 +20,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['techecom-yordans-projects-4c7b2c13.vercel.app', 'https://techecom-yordans-projects-4c7b2c13.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app']
 CSRF_TRUSTED_ORIGINS = ['https://techecom-yordans-projects-4c7b2c13.vercel.app']
 
 
@@ -87,6 +89,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
